@@ -7,8 +7,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
 
+
+class MainViewController: UIViewController {
+    
+    var svc: SecondViewController?
+    
     @IBOutlet weak var labelMainVC: UILabel!
     
     var nameUser: String = "Jhon"
@@ -16,7 +20,10 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSecVC",
             let vc = segue.destination as? SecondViewController {
-            vc.seconLabel?.text = nameUser
+            print("prepare")
+            vc.userName = nameUser
+            
+            vc.delegate = self
             
         }
     }
@@ -32,5 +39,14 @@ class MainViewController: UIViewController {
     }
     
 
+}
+
+extension MainViewController: Delegate {
+    func moveData(data: String) {
+        print("extension")
+        labelMainVC.text = data
+    }
+    
+    
 }
 

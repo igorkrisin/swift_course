@@ -7,8 +7,13 @@
 
 import UIKit
 
+
 class SecondViewController: UIViewController {
 
+    
+    weak var delegate: Delegate?
+    var mainVC = MainViewController()
+    
     @IBOutlet weak var seconLabel: UILabel!
     @IBOutlet weak var secondTextfield: UITextField!
     
@@ -24,6 +29,12 @@ class SecondViewController: UIViewController {
     
     
     @IBAction func saveTecxtfieldData(_ sender: Any) {
+        guard let secViewContrText = secondTextfield.text else { return }
+        guard !secViewContrText.isEmpty else { return }
+        delegate?.moveData(data: secViewContrText)
+        print("TField data: ", secViewContrText)
+        navigationController?.popViewController(animated: true)
+        
     }
     
     /*
