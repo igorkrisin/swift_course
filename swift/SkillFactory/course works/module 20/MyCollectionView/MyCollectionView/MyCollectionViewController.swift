@@ -9,17 +9,25 @@ import UIKit
 
 class MyCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var cellReuseIdentifier = "CustomItemCell"
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var arrayCustomCell = [CustomItemModel]()
     var arrayCell = [ModelItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        arrayCell.append(ModelItem(nameItem: "Dark yellow color", imageNameItem: "temp.darkYellow"))
-        arrayCell.append(ModelItem(nameItem: "Orange color", imageNameItem: "temp.orange"))
-        arrayCell.append(ModelItem(nameItem: "Red color", imageNameItem: "temp.red"))
+        let xib = UINib(nibName: cellReuseIdentifier, bundle: nil)
+        collectionView.register(xib, forCellWithReuseIdentifier: cellReuseIdentifier)
+        
+        
+        arrayCustomCell.append(CustomItemModel(image: "temp.orange", topLabel: "first element", bottomLabel: "orange"))
+        
+        arrayCustomCell.append(CustomItemModel(image: "temp.red", topLabel: "second element", bottomLabel: "red"))
+        
+        arrayCustomCell.append(CustomItemModel(image: "temp.green", topLabel: "third element", bottomLabel: "green"))
 
         
         collectionView.dataSource = self
@@ -29,13 +37,14 @@ class MyCollectionViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayCell.count
+        return arrayCustomCell.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? MyCVItem {
-            cell.imageCell.image = UIImage(named: self.arrayCell[indexPath.row].imageNameItem)
-            cell.labelCell.text = arrayCell[indexPath.row].nameItem
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? CustomItemCell {
+            cell.image.image = UIImage(named: self.arrayCustomCell[indexPath.row].image)
+            cell.labelBottom.text = arrayCustomCell[indexPath.row].bottomLabel
+            cell.labelTop.text = arrayCustomCell[indexPath.row].topLabel
             return cell
         }
         return UICollectionViewCell()

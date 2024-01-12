@@ -19,8 +19,7 @@ class CustomItemCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
-        let xib = UINib(nibName: "cell", bundle: nil)
+    
     }
 
 }

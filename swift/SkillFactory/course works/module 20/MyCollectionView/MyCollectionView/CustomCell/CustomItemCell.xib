@@ -10,9 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomItemCell" id="gTV-IL-0wX" customClass="CustomItemCell" customModule="MyCollectionView" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CustomItemCell" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-IL-0wX" customClass="CustomItemCell" customModule="MyCollectionView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
-            <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="200" height="240"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,6 +65,8 @@
                 <constraint firstAttribute="bottom" secondItem="FG8-O0-1bo" secondAttribute="bottom" id="Is3-5v-lwi"/>
                 <constraint firstItem="FG8-O0-1bo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LIo-64-07J"/>
                 <constraint firstAttribute="trailing" secondItem="FG8-O0-1bo" secondAttribute="trailing" id="hNf-cE-LVB"/>
+                <constraint firstAttribute="height" constant="240" id="hl1-BU-ieO"/>
+                <constraint firstAttribute="width" constant="200" id="z92-T5-Mjq"/>
             </constraints>
             <size key="customSize" width="187" height="114"/>
             <connections>
