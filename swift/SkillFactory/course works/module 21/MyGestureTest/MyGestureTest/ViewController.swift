@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var orangeViewOutlet: UIView!
     
+    @IBOutlet var brownViewOutlett: UIView!
     
     
     override func viewDidLoad() {
@@ -22,22 +23,25 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         let mixingGesture = MixGesture(target: self, action: #selector(handleMixing))
         mixingGesture.delegate = self
         orangeViewOutlet.addGestureRecognizer(mixingGesture)
-        redViewOutlet.frame = CGRect(x: 30, y: Int(redViewOutlet.frame.minY), width: 200, height: Int(redViewOutlet.frame.height))
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        redViewOutlet.frame = CGRect(x: 30, y: Int(redViewOutlet.frame.minY), width: 200, height: Int(redViewOutlet.frame.height))
-        view.setNeedsLayout()
-        view.layoutIfNeeded()
+//    override func viewWillAppear(_ animated: Bool) {
+//       
+//        view.setNeedsLayout()
+//        view.layoutIfNeeded()
+//    }
+//    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
     }
     
     @objc func handleMixing(_ gesture: MixGesture) {
-        let redViewX = greenViewOutlet.frame.minX
-        let redViewY = greenViewOutlet.frame.minY
-        let redViewWidth = greenViewOutlet.frame.width
-        let redViewHeight = greenViewOutlet.frame.height
-        greenViewOutlet.frame = CGRect(x: redViewX, y: redViewY, width: redViewWidth - 30, height: redViewHeight)
+        let redViewX = redViewOutlet.frame.minX
+        let redViewY = redViewOutlet.frame.minY
+        let redViewWidth = redViewOutlet.frame.width
+        let redViewHeight = redViewOutlet.frame.height
+        redViewOutlet.frame = CGRect(x: redViewX, y: redViewY, width: redViewWidth - 30, height: redViewHeight)
     }
 
 
@@ -58,7 +62,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         guard gesture.state == .ended else {
             return
         }
-        print("orange view panned")
         //исчезновение в красном View
         for value in Int(redViewFrame.minY)...Int(redViewFrame.maxY) {
             if Int(orangeViewFrame.origin.y) == value {
@@ -85,7 +88,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         guard gesture.state == .ended else {
             return
         }
-        print("green view panned")
         //исчезновение в красном View
         for value in Int(redViewFrame.minY)...Int(redViewFrame.maxY) {
             if(Int(greenViewFrame.origin.y) == value) {

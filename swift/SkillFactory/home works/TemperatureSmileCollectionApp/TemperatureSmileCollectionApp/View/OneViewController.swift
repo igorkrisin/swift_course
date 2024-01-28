@@ -66,15 +66,15 @@ class OneViewController: UIViewController, UICollectionViewDelegate, UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let vc = storyboard?.instantiateViewController(withIdentifier: "ShowImageVC") as? SmileViewController else { return }
         
- 
-            
-            var currentSelectedImage = arrayImageName[indexPath.row]
+        
+        
+        let currentSelectedImage = arrayImageName[indexPath.row]
         if collectionView == collectionViewOne {
             vc.setImageName(name: currentSelectedImage)
         } else {
             vc.setImageName(name: arraySmile[indexPath.row])
         }
-            present(vc, animated: true, completion: nil)
+        present(vc, animated: true, completion: nil)
         
     }
 }

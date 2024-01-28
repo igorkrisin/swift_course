@@ -1,9 +1,4 @@
-//
-//  MixGesture.swift
-//  MyGestureTest
-//
-//  Created by Игорь Крысин on 19.01.2024.
-//
+
 
 import UIKit
 
@@ -37,26 +32,24 @@ class MixGesture: UIGestureRecognizer {
         guard let touch = touches.first else { return }
         
         mixingStartPoint = touch.location(in: view)
-        //print("mixingStartPoint: ", mixingStartPoint)
+        
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
         guard let touch = touches.first else { return }
         
-        //print("touch: ", touch)
         
         let mixingLocation = touch.location(in: view)
         
         let horizontalDifference = mixingLocation.x - mixingStartPoint.x
         
-        //print("horizontalDifference: ", horizontalDifference)
-        
-        if abs(horizontalDifference) < CGFloat(distanceForMixGesture) { 
+        if abs(horizontalDifference) < CGFloat(distanceForMixGesture) {
             return
         }
         
         let direction: MixingGestureDirection
-        //print("horizontDifferent: ", horizontalDifference)
+
+        
         if horizontalDifference < 0 {
             direction = .left
         } else {
@@ -71,6 +64,7 @@ class MixGesture: UIGestureRecognizer {
         }
         //if state == .possible && mixingNumber > requiredMovements {
             state = .ended
+        print("direction finished")
         //}
     }
     

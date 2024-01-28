@@ -34,12 +34,13 @@
                                     <outletCollection property="gestureRecognizers" destination="vvc-bN-HJT" appends="YES" id="oMB-Ou-oqZ"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pem-9S-66h">
+                            <view contentMode="scaleToFill" id="pem-9S-66h">
                                 <rect key="frame" x="1" y="94" width="393" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemPinkColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="MHf-SX-FgX"/>
                                     <constraint firstAttribute="height" constant="128" id="VJ5-Md-Bpr"/>
-                                    <constraint firstAttribute="width" constant="393" id="ncA-e8-8iU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -53,7 +54,7 @@
                     <connections>
                         <outlet property="greenViewOutlet" destination="yKx-Pc-a3X" id="kZw-J8-aoI"/>
                         <outlet property="orangeViewOutlet" destination="pN4-VA-nij" id="sbO-qw-J7p"/>
-                        <outlet property="redViewOutlet" destination="pem-9S-66h" id="bNs-Ye-bsG"/>
+                        <outlet property="redViewOutlet" destination="pem-9S-66h" id="a1m-Pz-PSr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
