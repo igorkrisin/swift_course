@@ -1,5 +1,5 @@
 //
-//  WorkNameCell.swift
+//  SettingCell.swift
 //  myTestDelegate
 //
 //  Created by Игорь Крысин on 28.01.2024.
@@ -7,11 +7,16 @@
 
 import UIKit
 
-class WorkNameCell: UITableViewCell {
+class SettingCell: UITableViewCell {
 
-    @IBOutlet weak var nameWork: UILabel!
+    @IBOutlet weak var nameToDo: UILabel!
+    
+    @IBOutlet weak var timerHours: UILabel!
+    @IBOutlet weak var timerMinutes: UILabel!
+    @IBOutlet weak var timerSeconds: UILabel!
     
    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,9 +29,6 @@ class WorkNameCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setNameWork(name: String){
-        self.nameWork.text = name
-    }
     
     
 

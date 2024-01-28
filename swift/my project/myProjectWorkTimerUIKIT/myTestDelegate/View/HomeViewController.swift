@@ -1,5 +1,5 @@
 //
-protocol myDelegate: AnyObject {
+protocol MyDelegate: AnyObject {
     func createTodoName(name: String)
 }
 
@@ -11,10 +11,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var createButton: UIButton!
     
-    
-    var nameWorksArray: [String] = ["ffff", "gggg"]
-    
-    var nameWorkArr: [WorkNameCell] = []
+    var nameWorkArr: [WorkTimerCell] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +20,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         workTableView.dataSource = self
 
         
+    }
+    @IBAction func moveToSettings(_ sender: Any) {
+        performSegue(withIdentifier: "HometoMoveSettings", sender: self)
     }
     
     @IBAction func createButtonAction(_ sender: Any) {
@@ -34,26 +34,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
          if segue.identifier == "toListTodoVC", let vc = segue.destination as? ListTodoVC {
              vc.ToDoDelegate = self
+         } else if segue.identifier == "HometoMoveSettings", let vc = segue.destination as? SettingsViewController {
              
          }
      }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("nameWorksArray.count: ", nameWorksArray.count)
-        return nameWorksArray.count
+        return nameWorkArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkNameCell", for: indexPath) as? WorkNameCell else { return UITableViewCell() }
-        cell.setNameWork(name: nameWorksArray[indexPath.row])
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkNameCell", for: indexPath) as? WorkTimerCell else { return UITableViewCell() }
+        cell.setNameWork(name: nameWorkArr[indexPath.row].name)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 91
     }
     
 }
 
-extension HomeViewController: myDelegate {
+extension HomeViewController: MyDelegate {
     func createTodoName(name: String) {
-        nameWorksArray.append(name)
+        let nameWorkItem = WorkTimerCell()
+        nameWorkItem.name = name
+        nameWorkArr.append(nameWorkItem)
         workTableView.reloadData()
     }
     

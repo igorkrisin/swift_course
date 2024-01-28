@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C5257ACC2B662A8E00CE4579 /* WorkNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257ACB2B662A8E00CE4579 /* WorkNameCell.swift */; };
+		C5257ACC2B662A8E00CE4579 /* WorkTimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257ACB2B662A8E00CE4579 /* WorkTimerCell.swift */; };
+		C5257AD32B66661400CE4579 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257AD22B66661400CE4579 /* SettingsViewController.swift */; };
+		C5257AD52B6695BB00CE4579 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257AD42B6695BB00CE4579 /* SettingCell.swift */; };
+		C5257AD72B669D4C00CE4579 /* UIBarButtonItem+cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257AD62B669D4C00CE4579 /* UIBarButtonItem+cell.swift */; };
 		C58C2AE62B555CF800AD41B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C2AE52B555CF800AD41B3 /* AppDelegate.swift */; };
 		C58C2AE82B555CF800AD41B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C2AE72B555CF800AD41B3 /* SceneDelegate.swift */; };
 		C58C2AEA2B555CF800AD41B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C2AE92B555CF800AD41B3 /* HomeViewController.swift */; };
@@ -18,7 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C5257ACB2B662A8E00CE4579 /* WorkNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkNameCell.swift; sourceTree = "<group>"; };
+		C5257ACB2B662A8E00CE4579 /* WorkTimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTimerCell.swift; sourceTree = "<group>"; };
+		C5257AD22B66661400CE4579 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C5257AD42B6695BB00CE4579 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		C5257AD62B669D4C00CE4579 /* UIBarButtonItem+cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+cell.swift"; sourceTree = "<group>"; };
 		C58C2AE22B555CF800AD41B3 /* myTestDelegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTestDelegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58C2AE52B555CF800AD41B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58C2AE72B555CF800AD41B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,9 +50,25 @@
 		C5257ACD2B662A9200CE4579 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				C5257ACB2B662A8E00CE4579 /* WorkNameCell.swift */,
+				C5257ACB2B662A8E00CE4579 /* WorkTimerCell.swift */,
+				C5257AD42B6695BB00CE4579 /* SettingCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C5257ACE2B664C5D00CE4579 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		C5257ACF2B6650D800CE4579 /* Extansions */ = {
+			isa = PBXGroup;
+			children = (
+				C5257AD62B669D4C00CE4579 /* UIBarButtonItem+cell.swift */,
+			);
+			path = Extansions;
 			sourceTree = "<group>";
 		};
 		C58C2AD92B555CF800AD41B3 = {
@@ -73,6 +95,8 @@
 				C58C2AFB2B55A85700AD41B3 /* View */,
 				C58C2AEB2B555CF800AD41B3 /* Main.storyboard */,
 				C5257ACD2B662A9200CE4579 /* Cell */,
+				C5257ACF2B6650D800CE4579 /* Extansions */,
+				C5257ACE2B664C5D00CE4579 /* Timer */,
 				C58C2AEE2B555CF900AD41B3 /* Assets.xcassets */,
 				C58C2AF02B555CF900AD41B3 /* LaunchScreen.storyboard */,
 				C58C2AF32B555CF900AD41B3 /* Info.plist */,
@@ -85,6 +109,7 @@
 			children = (
 				C58C2AE92B555CF800AD41B3 /* HomeViewController.swift */,
 				C58C2AF92B55A7E200AD41B3 /* ListTodoVC.swift */,
+				C5257AD22B66661400CE4579 /* SettingsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,10 +186,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C58C2AEA2B555CF800AD41B3 /* HomeViewController.swift in Sources */,
-				C5257ACC2B662A8E00CE4579 /* WorkNameCell.swift in Sources */,
+				C5257ACC2B662A8E00CE4579 /* WorkTimerCell.swift in Sources */,
 				C58C2AE62B555CF800AD41B3 /* AppDelegate.swift in Sources */,
 				C58C2AFA2B55A7E200AD41B3 /* ListTodoVC.swift in Sources */,
+				C5257AD52B6695BB00CE4579 /* SettingCell.swift in Sources */,
+				C5257AD72B669D4C00CE4579 /* UIBarButtonItem+cell.swift in Sources */,
 				C58C2AE82B555CF800AD41B3 /* SceneDelegate.swift in Sources */,
+				C5257AD32B66661400CE4579 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

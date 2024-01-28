@@ -10,7 +10,7 @@ import UIKit
 
 class ListTodoVC: UIViewController {
     
-    weak var ToDoDelegate: myDelegate?
+    weak var ToDoDelegate: MyDelegate?
     
     @IBOutlet weak var textFieldFieldToDo: UITextField!
     
@@ -26,8 +26,10 @@ class ListTodoVC: UIViewController {
         
         let saveRightButton = UIBarButtonItem(image: UIImage(named: "done"), style: .plain, target: self, action: #selector(saveButtonTapped))
         
-        stileForUIBarButton(button: backLeftButton)
-        stileForUIBarButton(button: saveRightButton)
+        backLeftButton.stileForUIBarButton(button: backLeftButton)
+        saveRightButton.stileForUIBarButton(button: saveRightButton)
+        
+        
         navigationItem.leftBarButtonItem = backLeftButton
         navigationItem.rightBarButtonItem = saveRightButton
         
@@ -47,10 +49,7 @@ class ListTodoVC: UIViewController {
         
     }
     
-    func stileForUIBarButton(button: UIBarButtonItem) {
-        button.title = ""
-        button.tintColor = .black
-    }
+    
     
 
     
@@ -61,3 +60,4 @@ class ListTodoVC: UIViewController {
     
 
 }
+
