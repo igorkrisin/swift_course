@@ -11,6 +11,10 @@
 		C5257AD32B66661400CE4579 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257AD22B66661400CE4579 /* SettingsViewController.swift */; };
 		C5257AD52B6695BB00CE4579 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257AD42B6695BB00CE4579 /* SettingCell.swift */; };
 		C5257AD72B669D4C00CE4579 /* UIBarButtonItem+cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5257AD62B669D4C00CE4579 /* UIBarButtonItem+cell.swift */; };
+		C55039D82B6B676300E6C977 /* myTestDelegate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C55039D62B6B676300E6C977 /* myTestDelegate.xcdatamodeld */; };
+		C55039DB2B6B67E900E6C977 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55039D92B6B67E900E6C977 /* Todo+CoreDataClass.swift */; };
+		C55039DC2B6B67E900E6C977 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55039DA2B6B67E900E6C977 /* Todo+CoreDataProperties.swift */; };
+		C55039DF2B6B684200E6C977 /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55039DE2B6B684200E6C977 /* CoreManager.swift */; };
 		C58C2AE62B555CF800AD41B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C2AE52B555CF800AD41B3 /* AppDelegate.swift */; };
 		C58C2AE82B555CF800AD41B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C2AE72B555CF800AD41B3 /* SceneDelegate.swift */; };
 		C58C2AEA2B555CF800AD41B3 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C58C2AE92B555CF800AD41B3 /* HomeViewController.swift */; };
@@ -25,6 +29,10 @@
 		C5257AD22B66661400CE4579 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C5257AD42B6695BB00CE4579 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		C5257AD62B669D4C00CE4579 /* UIBarButtonItem+cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+cell.swift"; sourceTree = "<group>"; };
+		C55039D72B6B676300E6C977 /* myTestDelegate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = myTestDelegate.xcdatamodel; sourceTree = "<group>"; };
+		C55039D92B6B67E900E6C977 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C55039DA2B6B67E900E6C977 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C55039DE2B6B684200E6C977 /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 		C58C2AE22B555CF800AD41B3 /* myTestDelegate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myTestDelegate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C58C2AE52B555CF800AD41B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C58C2AE72B555CF800AD41B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,9 +79,20 @@
 			path = Extansions;
 			sourceTree = "<group>";
 		};
+		C55039DD2B6B680300E6C977 /* Todo */ = {
+			isa = PBXGroup;
+			children = (
+				C55039D92B6B67E900E6C977 /* Todo+CoreDataClass.swift */,
+				C55039DA2B6B67E900E6C977 /* Todo+CoreDataProperties.swift */,
+				C55039DE2B6B684200E6C977 /* CoreManager.swift */,
+			);
+			path = Todo;
+			sourceTree = "<group>";
+		};
 		C58C2AD92B555CF800AD41B3 = {
 			isa = PBXGroup;
 			children = (
+				C55039DD2B6B680300E6C977 /* Todo */,
 				C58C2AE42B555CF800AD41B3 /* myTestDelegate */,
 				C58C2AE32B555CF800AD41B3 /* Products */,
 			);
@@ -100,6 +119,7 @@
 				C58C2AEE2B555CF900AD41B3 /* Assets.xcassets */,
 				C58C2AF02B555CF900AD41B3 /* LaunchScreen.storyboard */,
 				C58C2AF32B555CF900AD41B3 /* Info.plist */,
+				C55039D62B6B676300E6C977 /* myTestDelegate.xcdatamodeld */,
 			);
 			path = myTestDelegate;
 			sourceTree = "<group>";
@@ -185,11 +205,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55039DF2B6B684200E6C977 /* CoreManager.swift in Sources */,
 				C58C2AEA2B555CF800AD41B3 /* HomeViewController.swift in Sources */,
 				C5257ACC2B662A8E00CE4579 /* WorkTimerCell.swift in Sources */,
+				C55039D82B6B676300E6C977 /* myTestDelegate.xcdatamodeld in Sources */,
+				C55039DB2B6B67E900E6C977 /* Todo+CoreDataClass.swift in Sources */,
 				C58C2AE62B555CF800AD41B3 /* AppDelegate.swift in Sources */,
 				C58C2AFA2B55A7E200AD41B3 /* ListTodoVC.swift in Sources */,
 				C5257AD52B6695BB00CE4579 /* SettingCell.swift in Sources */,
+				C55039DC2B6B67E900E6C977 /* Todo+CoreDataProperties.swift in Sources */,
 				C5257AD72B669D4C00CE4579 /* UIBarButtonItem+cell.swift in Sources */,
 				C58C2AE82B555CF800AD41B3 /* SceneDelegate.swift in Sources */,
 				C5257AD32B66661400CE4579 /* SettingsViewController.swift in Sources */,
@@ -415,6 +439,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C55039D62B6B676300E6C977 /* myTestDelegate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C55039D72B6B676300E6C977 /* myTestDelegate.xcdatamodel */,
+			);
+			currentVersion = C55039D72B6B676300E6C977 /* myTestDelegate.xcdatamodel */;
+			path = myTestDelegate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C58C2ADA2B555CF800AD41B3 /* Project object */;
 }

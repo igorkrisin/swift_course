@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import CoreData
 
 
 class ListTodoVC: UIViewController {
+    
+    private let manager = CoreManager.shared
+    var todo: Todo?
     
     weak var ToDoDelegate: MyDelegate?
     
@@ -44,6 +48,9 @@ class ListTodoVC: UIViewController {
        
     
     @objc func saveButtonTapped(_ sender: Any) {
+        if self.todo == nil {
+            self.manager.addNewTodo(name: textFieldFieldToDo.text ?? "", hourses: "00", minutes: "00", seconds: "00")
+        }
         ToDoDelegate?.createTodoName(name: textFieldFieldToDo.text ?? "")
         navigationController?.popViewController(animated: true)
         
