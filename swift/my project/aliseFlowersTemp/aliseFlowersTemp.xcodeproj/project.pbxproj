@@ -74,6 +74,7 @@
 		C5608F182AE8E39F002B26F6 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		C5608F1A2AE8E3DC002B26F6 /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		C5608F1C2AE97053002B26F6 /* PositionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionCell.swift; sourceTree = "<group>"; };
+		C58A57A72B6E1A2200C7A46F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C5F7715A2AE4452100AB4CC6 /* aliseFlowersTemp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aliseFlowersTemp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F7715D2AE4452100AB4CC6 /* aliseFlowersTempApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aliseFlowersTempApp.swift; sourceTree = "<group>"; usesTabs = 0; };
 		C5F7715F2AE4452100AB4CC6 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -192,6 +193,7 @@
 		C5F7715C2AE4452100AB4CC6 /* aliseFlowersTemp */ = {
 			isa = PBXGroup;
 			children = (
+				C58A57A72B6E1A2200C7A46F /* Info.plist */,
 				C5F7715D2AE4452100AB4CC6 /* aliseFlowersTempApp.swift */,
 				C5377D472AEAC85500D92665 /* Servisces */,
 				C5383E0D2AE55B02009D319F /* Model */,
@@ -469,6 +471,7 @@
 				DEVELOPMENT_TEAM = U2S6URFDMC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = aliseFlowersTemp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +501,7 @@
 				DEVELOPMENT_TEAM = U2S6URFDMC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = aliseFlowersTemp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

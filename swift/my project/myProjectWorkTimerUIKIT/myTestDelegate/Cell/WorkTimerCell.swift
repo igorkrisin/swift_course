@@ -9,7 +9,7 @@ import UIKit
 
 class WorkTimerCell: UITableViewCell {
     
-    
+    var buttonTappedHandler: (() -> Void)?
 
     @IBOutlet weak var nameWork: UILabel!
     
@@ -34,6 +34,7 @@ class WorkTimerCell: UITableViewCell {
     let stopImage = UIImage(named: "pause")?.withTintColor(.black, renderingMode: .alwaysOriginal)
     let playImage = UIImage(named: "play")
     
+   
     
    
     
@@ -45,17 +46,25 @@ class WorkTimerCell: UITableViewCell {
         // Initialization code
        
     }
-
+    
+    @IBAction func toSettingView(_ sender: Any) {
+        buttonTappedHandler?()
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
     
+    
+
+    
     func setNameWork(name: String){
         self.nameWork.text = name
     }
     
+
     
     
     @IBAction func startTimer(_ sender: Any) {

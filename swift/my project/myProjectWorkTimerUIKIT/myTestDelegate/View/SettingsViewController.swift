@@ -33,6 +33,12 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableSettingView.reloadData()
+    }
+   
+    
     func fetchOnlyObject(){
         
     }
@@ -48,12 +54,24 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingCell", for: indexPath) as? SettingCell else { return UITableViewCell() }
         
+        
         cell.nameToDo.text = SettingsViewController.manager.toDos[indexPath.row].name ?? "error"
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "ListTodoVC") as? ListTodoVC else { return }
+        vc.todo = SettingsViewController.manager.toDos[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
+    }
 
     
-
+    @IBAction func deleteTapped(_ sender: Any, indexPath: IndexPath) { // остановился на удалении как  сделать с кнопки - надо погуглить
+        let toDo = SettingsViewController.manager.toDos[indexPath.row]
+    }
+    
+    
 }
 
 

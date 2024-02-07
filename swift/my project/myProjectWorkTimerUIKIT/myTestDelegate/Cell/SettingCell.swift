@@ -9,6 +9,8 @@ import UIKit
 
 class SettingCell: UITableViewCell {
 
+    
+    
     @IBOutlet weak var nameToDo: UILabel!
     
     @IBOutlet weak var timerHours: UILabel!

@@ -50,6 +50,8 @@ class ListTodoVC: UIViewController {
     @objc func saveButtonTapped(_ sender: Any) {
         if self.todo == nil {
             self.manager.addNewTodo(name: textFieldFieldToDo.text ?? "", hourses: "00", minutes: "00", seconds: "00")
+        } else {
+            self.todo?.updateTodo(newName: textFieldFieldToDo.text ?? "")
         }
         ToDoDelegate?.createTodoName(name: textFieldFieldToDo.text ?? "")
         navigationController?.popViewController(animated: true)

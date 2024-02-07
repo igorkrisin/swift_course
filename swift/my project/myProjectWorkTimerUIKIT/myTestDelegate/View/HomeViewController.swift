@@ -8,7 +8,9 @@ import CoreData
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
     
-    var didSelection:((Todo) -> Void)?
+    
+    
+    
     
     private let manager = CoreManager.shared
 
@@ -26,7 +28,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        workTableView.reloadData()
+    }
+   
     @IBAction func moveToSettings(_ sender: Any) {
+        
+       
+        
         performSegue(withIdentifier: "HometoMoveSettings", sender: self)
     }
     
@@ -46,13 +57,17 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return manager.toDos.count
-        //return nameWorkArr.count
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "WorkNameCell", for: indexPath) as? WorkTimerCell else { return UITableViewCell() }
         cell.setNameWork(name: manager.toDos[indexPath.row].name ?? "error")
-        //cell.setNameWork(name: nameWorkArr[indexPath.row].name)
+        cell.buttonTappedHandler = {
+            print(self.manager.toDos[indexPath.row].id)
+            print(indexPath.row)
+        }
+       
         return cell
     }
     
