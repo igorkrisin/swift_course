@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lkg-UP-kpv">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Mvvm View-->
+        <scene sceneID="dhI-ZP-R2f">
+            <objects>
+                <viewController id="lkg-UP-kpv" customClass="MvvmView" customModule="LearningPatternMVVM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="7Xl-dO-FEd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G4v-DW-DDJ">
+                                <rect key="frame" x="76" y="340" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="1W9-bo-uxX"/>
+                                    <constraint firstAttribute="width" constant="240" id="9b5-4M-FVi"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSe-ts-qZ8">
+                                <rect key="frame" x="31" y="615" width="150" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="3mU-hT-a6o"/>
+                                    <constraint firstAttribute="height" constant="50" id="S3p-WQ-2Qr"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show first item">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFirstImagePressed:" destination="lkg-UP-kpv" eventType="touchUpInside" id="JQR-RK-eTy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZl-dn-Cb2">
+                                <rect key="frame" x="211" y="615" width="150" height="50"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="P5j-gZ-asM"/>
+                                    <constraint firstAttribute="height" constant="50" id="V96-CS-FCh"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show second image">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="showSecondImagePressed:" destination="lkg-UP-kpv" eventType="touchUpInside" id="pEK-eD-s7q"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="05b-RS-cIs">
+                                <rect key="frame" x="186" y="449" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="98d-bD-aVD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wZl-dn-Cb2" firstAttribute="top" secondItem="G4v-DW-DDJ" secondAttribute="bottom" constant="35" id="5wX-7v-oIN"/>
+                            <constraint firstItem="G4v-DW-DDJ" firstAttribute="leading" secondItem="98d-bD-aVD" secondAttribute="leading" constant="76" id="DqJ-hN-5tJ"/>
+                            <constraint firstItem="G4v-DW-DDJ" firstAttribute="centerX" secondItem="7Xl-dO-FEd" secondAttribute="centerX" id="fp1-qD-E0o"/>
+                            <constraint firstItem="G4v-DW-DDJ" firstAttribute="top" secondItem="98d-bD-aVD" secondAttribute="top" constant="281" id="kEn-bF-lHW"/>
+                            <constraint firstItem="sSe-ts-qZ8" firstAttribute="top" secondItem="G4v-DW-DDJ" secondAttribute="bottom" constant="35" id="pk4-Wv-w1l"/>
+                            <constraint firstItem="05b-RS-cIs" firstAttribute="centerX" secondItem="7Xl-dO-FEd" secondAttribute="centerX" id="rvK-ci-4Ke"/>
+                            <constraint firstItem="05b-RS-cIs" firstAttribute="top" secondItem="98d-bD-aVD" secondAttribute="top" constant="390" id="se8-dN-zAQ"/>
+                            <constraint firstItem="sSe-ts-qZ8" firstAttribute="leading" secondItem="7Xl-dO-FEd" secondAttribute="leadingMargin" constant="15" id="vZs-9q-gLt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wZl-dn-Cb2" secondAttribute="trailing" constant="15" id="yDU-Mm-diK"/>
+                            <constraint firstItem="G4v-DW-DDJ" firstAttribute="centerY" secondItem="7Xl-dO-FEd" secondAttribute="centerY" id="zD4-cr-bug"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="05b-RS-cIs" id="P1q-SY-NQt"/>
+                        <outlet property="imageView" destination="G4v-DW-DDJ" id="4Dy-j5-Bfv"/>
+                        <outlet property="showFirstImage" destination="sSe-ts-qZ8" id="fOY-HW-mAc"/>
+                        <outlet property="showSecondImage" destination="wZl-dn-Cb2" id="Yox-YO-QHe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qSC-iI-rzQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="-104"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

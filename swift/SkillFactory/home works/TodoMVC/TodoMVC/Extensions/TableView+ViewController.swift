@@ -11,7 +11,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Возвращаем количество строк в секции
-        print("count: ",itemModel.storeItems.count)
         return itemModel.storeItems.count
     }
     
